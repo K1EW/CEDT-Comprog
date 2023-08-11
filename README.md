@@ -1,4 +1,4 @@
 # CEDT-Comprog
-This repo contains _solution_ for each problem in **_(2110104) CEDT - Computer Programming_** _(2023)_ **not** _editorial_.
+This repo contains <u>_solution_</u> for each problem in **_(2110104) CEDT - Computer Programming (2023)_** <u>_not editorial_</u>.
 
 The solutions are ensured **not to use any topics outside the syllabus.**
