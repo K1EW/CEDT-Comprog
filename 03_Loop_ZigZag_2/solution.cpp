@@ -8,18 +8,12 @@ int main(){
     int maxZigZag = -1e9, maxZagZig = -1e9;
     string x="";
     int cnt=0;
+    int a,b;
     while (true){
-        getline(cin, x);
-        if (x == "-998" || x == "-999")
+        cin >> a;
+        if (a==-998 || b==-999)
             break;
-        int spaceIdx = 0;
-        for (int i=0;i<x.size();i++){
-            if (x[i] == ' '){
-                spaceIdx = i;
-                break;
-            }
-        }
-        int a = stoi(x.substr(0,spaceIdx)), b = stoi(x.substr(spaceIdx+1, (int)x.size() - (spaceIdx+1)));
+        cin >> b;
         if (cnt%2==0){
             minZigZag = min(minZigZag, a);
             minZagZig = min(minZagZig, b);
@@ -33,7 +27,7 @@ int main(){
         }
         cnt++;
     }
-    if (x=="-998")
+    if (a==-998)
         cout << minZigZag << " " << maxZigZag;
     else
         cout << minZagZig << " " << maxZagZig;
