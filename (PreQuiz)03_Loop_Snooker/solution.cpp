@@ -5,7 +5,7 @@ using namespace std;
 int main(){
     int n;
     cin >> n; cin.ignore();
-    string end = "Y G N B P K   ";
+    string end = "Y G N B P K";
     while(n--){
         string s;
         getline(cin, s);
@@ -39,7 +39,7 @@ int main(){
         }
         int j=0;
         for (int i=lastRIdx+4;i<l-3;i+=2, j+=2){
-            if (j == (int)end.size()-3){
+            if (j == (int)end.size()){
                 ok = false;
                 break;
             }
