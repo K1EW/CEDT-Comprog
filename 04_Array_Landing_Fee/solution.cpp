@@ -2,38 +2,29 @@
 
 using namespace std;
 
-int n;
-
-int findCostEntry(string ct, string ctList[], int costList[]){
-    int idx=0;
-    for (int i=0;i<n;i++){
-        if (ct == ctList[i]){
-            idx = i;
-            break;
-        }
-    }
-    return costList[idx];
-}
-
 int main(){
+    int n;
     cin >> n;
-    string ctList[n];
-    int costList[n];
-    int cost = 0;
+    string ctList[n+5];
+    int fees[n+5];
     for (int i=0;i<n;i++)
-        cin >> ctList[i] >> costList[i];
-    string fl;
+        cin >> ctList[i] >> fees[i];
     cin.ignore();
+    string fl;
     getline(cin, fl);
-    string prevCt = fl.substr(4,2);
-    fl += " ";
-    for (int i=0;i<fl.size();i++){
-        if (fl[i] == ' '){
-            string currCt = fl.substr(i-2,2);
-            if (currCt != prevCt){
-                cost += findCostEntry(currCt, ctList, costList);
-                prevCt = currCt;
+    int cost = 0 ;
+    for (int i=12;i<fl.size();i+=7){
+        string u = fl.substr(i-8,2);
+        string v = fl.substr(i-1,2);
+        if (u != v){
+            int idx = 0;
+            for (int i=0;i<n;i++){
+                if (ctList[i] == v){
+                    idx = i;
+                    break;
+                }
             }
+            cost += fees[idx];
         }
     }
 
@@ -41,3 +32,5 @@ int main(){
 
     return 0;
 }
+/*AAA-EE BBB-EE CCC-EE KKK-CC LLL-CC MMM-CC XXX-EE YYY-EE FFF-AA GGG-BB HHH-CC WWW-DD PPP-EE ZZZ-EE
+*/
