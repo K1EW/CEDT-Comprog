@@ -32,5 +32,3 @@ int main(){
 
     return 0;
 }
-/*AAA-EE BBB-EE CCC-EE KKK-CC LLL-CC MMM-CC XXX-EE YYY-EE FFF-AA GGG-BB HHH-CC WWW-DD PPP-EE ZZZ-EE
-*/
