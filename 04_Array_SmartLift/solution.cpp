@@ -2,10 +2,6 @@
 
 using namespace std;
 
-bool isBetween(int a, int x, int b){
-    return (a <= x && x <= b || a >= x && x >= b);
-}
-
 int main(){
     int n,m;
     cin >> n;
@@ -23,17 +19,16 @@ int main(){
         int chosen=0, best=1e9;
         for (int i=1;i<=n;i++){
             int cost;
-            if (isBetween(init[i],curr,dest) && isBetween(curr, dest, end[i]))
+            if (init[i] <= curr && curr <= dest && dest <= end[i] || init[i] >= curr && curr >= dest && dest >= end[i])
                 cost = 0;
-            else if (isBetween(init[i],dest,curr) && isBetween(dest,curr,end[i]))
-                cost = abs(end[i] - dest);
-            else if (isBetween(init[i],curr,end[i]))
+            else if (init[i] <= curr && curr <= end[i] || init[i] >= curr && curr >= end[i])
                 cost = abs(end[i] - dest);
             else
                 cost = abs(end[i] - curr) + abs(curr - dest);
-            if (best > cost){
-                best = cost;
+            
+            if (cost < best){
                 chosen = i;
+                best = cost;
             }
         }
         cout << ">> " << chosen << "\n";
